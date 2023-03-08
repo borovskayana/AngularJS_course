@@ -62,10 +62,7 @@
           var data = result.data;
     
           for (var category in data) {
-              searchItems.push(
-                  data[category].menu_items.filter(
-                      item => item.description.toLowerCase().includes(searchTerm.toLowerCase())
-                  )
+              searchItems.push( data[category].menu_items.filter( item => item.description.toLowerCase().includes(searchTerm.toLowerCase()) )
               );
           }
           return searchItems.flat();
