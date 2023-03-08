@@ -3,7 +3,7 @@
   
     angular.module('data')
     .service('MenuDataService', MenuDataService)
-    .constant('apiBasePath', ' https://davids-restaurant.herokuapp.com/');
+    .constant('apiBasePath', 'https://coursera-jhu-default-rtdb.firebaseio.com/');
   
     MenuDataService.$inject = ['$http', 'apiBasePath'];
     function MenuDataService ($http, apiBasePath) {
@@ -21,7 +21,7 @@
       service.getItemsForCategory = function (categoryShortName) {
         return $http({
           method: 'GET',
-          url: (apiBasePath + 'menu_items.json?category=' + categoryShortName)
+          url: (apiBasePath + `menu_items/${categoryShortName}.json`)
         });
       }
     }
