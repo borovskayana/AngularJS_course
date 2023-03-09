@@ -12,7 +12,8 @@
       service.getAllCategories = function () {
         var result = $http({
           method: 'GET',
-          mode: 'no-cors',
+       referrerPolicy: "unsafe_url",
+	   mode: "cors",
           url: (apiBasePath + 'categories.json'),
                 
         });
@@ -23,7 +24,8 @@
       service.getItemsForCategory = function (categoryShortName) {
         return $http({
           method: 'GET',
-           mode: 'no-cors',
+            referrerPolicy: "unsafe_url", 
+	   mode: "cors",
           url: (apiBasePath + `menu_items/${categoryShortName}.json`)
         });
       }
