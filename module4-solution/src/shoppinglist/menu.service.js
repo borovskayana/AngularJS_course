@@ -12,7 +12,9 @@
       service.getAllCategories = function () {
         var result = $http({
           method: 'GET',
-          url: (apiBasePath + 'categories.json')
+          mode: 'no-cors',
+          url: (apiBasePath + 'categories.json'),
+                
         });
   
         return result;
@@ -21,6 +23,7 @@
       service.getItemsForCategory = function (categoryShortName) {
         return $http({
           method: 'GET',
+           mode: 'no-cors',
           url: (apiBasePath + `menu_items/${categoryShortName}.json`)
         });
       }
