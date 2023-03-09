@@ -13,7 +13,7 @@
         var result = $http({
           method: 'GET',
        referrerPolicy: "unsafe_url",
-	   mode: "cors",
+	   mode: "no-cors",
           url: (apiBasePath + 'categories.json'),
                 
         });
@@ -25,7 +25,7 @@
         return $http({
           method: 'GET',
             referrerPolicy: "unsafe_url", 
-	   mode: "cors",
+	   mode: "no-cors",
           url: (apiBasePath + `menu_items/${categoryShortName}.json`)
         });
       }
